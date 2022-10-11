@@ -21,12 +21,16 @@ const invitati = ["luigi.rossi@gmail.com", "filippo.neri@gmail.com", "andrea.bia
 console.log(mail, invitati);
 console.log(invitati.length);
 
+let verify = true; 
+
 for(let i = 0; i < invitati.length; i++){
-    if(mail == invitati[i]){
+    if(mail == mail){
         console.log("Mail in elenco, sei dentro");
+        verify = true;
     }
     else{
         console.log("Mail non in elenco, accomodati pure fuori");  
+        verify = false;
     }
 }
 
@@ -34,6 +38,30 @@ for(let i = 0; i < invitati.length; i++){
 
 
 /*DADI*/
+
+var n = prompt("Inserisci quante volte vuoi far girare il dado?");
+const player1 = [1, 2, 3, 4, 5, 6];
+const player2 = [3, 4, 6, 1, 5, 2];
+
+console.log(player1);
+console.log(player2);
+
+
+for(let i = 1; i <= n; i++){
+    let numGenerate = Math.floor(Math.random() * 6) + 1;
+    console.log(numGenerate);
+    if(player1[i] > player2[i]){
+        console.log("You win");
+    }
+    else if(player1[i] == player2[i]){
+        console.log("You draw with the computer");
+    }
+    else if(player1[i] < player2[i]){
+        console.log("You lost");
+    }
+}
+
+
 
 
 
