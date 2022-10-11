@@ -25,7 +25,7 @@ for(let i = 0; i < invitati.length; i++){
     if(mail == invitati[i]){
         console.log("Mail in elenco, sei dentro");
     }
-    else if(mail != invitati[i]){
+    else{
         console.log("Mail non in elenco, accomodati pure fuori");  
     }
 }
