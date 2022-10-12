@@ -58,33 +58,3 @@ else {
 }
 
 
-
-/*
-const generateNumbers = [];
-const numberToGenerate = 10;
-
-
-for(let i = 1; i <= numberToGenerate; i++){
-    let numGenerate = Math.floor(Math.random() * 6) + 1;
-    console.log(numGenerate);
-}
-*/
-
-/* ----------------------------- */
-/* programma chiede utente quante volte generare un ciclo e deve stampare dei numeri random da 1 a 10 */
-
-//prompt("");
-
-/*
-var n = prompt("inserisci il numero di cicli");
-
-for(let i = 1; i <= n; i++){
-    let randomNum = Math.floor(Math.random() * 10) +1;
-    console.log(randomNum);
-}
-
-
-
-*/
-
-
