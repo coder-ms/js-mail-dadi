@@ -1,3 +1,5 @@
+"use strict";
+
 /*
     Mail
     Chiedi all’utente la sua email,
@@ -13,24 +15,23 @@
 
 
 /*MAIL*/
-
-var mail = prompt("Inserisci la tua mail");
+var mail = document.getElementById('email').value;
 
 const invitati = ["luigi.rossi@gmail.com", "filippo.neri@gmail.com", "andrea.bianchi@gmail.com", "giuseppe.verdi@gmail.com", "antonio.canova@gmail.com"];
 
+/*
 console.log(mail, invitati);
 console.log(invitati.length);
-
-let verify = true; 
+*/
 
 for(let i = 0; i < invitati.length; i++){
-    if(mail == mail){
-        console.log("Mail in elenco, sei dentro");
-        verify = true;
+    if(mail== invitati[i] ){
+        document.getElementById("email").innerHTML = invitati[i];
+        document.write("Mail in elenco, sei dentro");
     }
     else{
-        console.log("Mail non in elenco, accomodati pure fuori");  
-        verify = false;
+        document.getElementById("email").innerHTML = invitati[i];
+        document.write("Mail non in elenco, accomodati pure fuori");
     }
 }
 
@@ -39,29 +40,51 @@ for(let i = 0; i < invitati.length; i++){
 
 /*DADI*/
 
-var n = prompt("Inserisci quante volte vuoi far girare il dado?");
-const player1 = [1, 2, 3, 4, 5, 6];
-const player2 = [3, 4, 6, 1, 5, 2];
+var player1Dice = Math.floor(Math.random() * 6) + 1;
+var player2Dice = Math.floor(Math.random() * 6) + 1;
 
-console.log(player1);
-console.log(player2);
+console.log(player1Dice, player2Dice);
 
+if (player1Dice > player2Dice) {
+    document.write("You: " + player1Dice, " Computer: " + player2Dice, " -> You win the match");
+}
 
-for(let i = 1; i <= n; i++){
-    let numGenerate = Math.floor(Math.random() * 6) + 1;
-    console.log(numGenerate);
-    if(player1[i] > player2[i]){
-        console.log("You win");
-    }
-    else if(player1[i] == player2[i]){
-        console.log("You draw with the computer");
-    }
-    else if(player1[i] < player2[i]){
-        console.log("You lost");
-    }
+else if (player1Dice === player2Dice) {
+    document.write("You: " + player1Dice, " Computer: " + player2Dice, " -> You tied the match");
+}
+
+else {
+    document.write("You: " + player1Dice, " Computer: " + player2Dice, " -> You lost the match");
 }
 
 
 
+/*
+const generateNumbers = [];
+const numberToGenerate = 10;
+
+
+for(let i = 1; i <= numberToGenerate; i++){
+    let numGenerate = Math.floor(Math.random() * 6) + 1;
+    console.log(numGenerate);
+}
+*/
+
+/* ----------------------------- */
+/* programma chiede utente quante volte generare un ciclo e deve stampare dei numeri random da 1 a 10 */
+
+//prompt("");
+
+/*
+var n = prompt("inserisci il numero di cicli");
+
+for(let i = 1; i <= n; i++){
+    let randomNum = Math.floor(Math.random() * 10) +1;
+    console.log(randomNum);
+}
+
+
+
+*/
 
 
