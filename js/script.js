@@ -1,5 +1,6 @@
 "use strict";
 
+/*MAIL*/
 /*
     Mail
     Chiedi all’utente la sua email,
@@ -7,41 +8,57 @@
     stampa un messaggio appropriato sull’esito del controllo.
 */
 
-
-
-
-
-/*MAIL*/
-//var mail = document.querySelector('email').value;
-
+/*Array */
 const invitati = ["luigi.rossi@gmail.com", "filippo.neri@gmail.com", "andrea.bianchi@gmail.com", "giuseppe.verdi@gmail.com", "antonio.canova@gmail.com"];
 
-/*
-console.log(mail, invitati);
-console.log(invitati.length);
-*/
 
-/*Collegamento bottone genera(HTML) alla funzione JS*/
-const bottone = document.getElementById('button');
+const btn = document.querySelector('button');
+const email = document.getElementById('email');
+const btnReset = document.getElementById('writeAgain')
+console.log(email);
 
-for(let i = 0; i < invitati.length; i++){
-    console.log(invitati[i]);
+/*Array vuoto da riempire in caso la mail inserita coincida con una delle mail del primo array */
+const invited= [];
+
+const host = document.querySelector('.youAreIn')
+const youAreOut = document.querySelector('.youAreOut')
+
+
+for(let i = 0 ; i < invitati.length; i++){
+    console.log(invitati[i])  
 }
 
-/*
-var verifyMail = function (){
-    for(let i = 0; i < invitati.length; i++){
-        if(mail == invitati[i] ){
-            document.getElementById("email").innerHTML = invitati[i];
-            document.write("Mail in elenco, sei dentro");
-        }
-        else{
-            document.write("Mail non in elenco, accomodati pure fuori");
+/*Verifica se sei dentro o meno scrivendo la tua mail */
+function verify(){
+    let check = false;
+    for( let i = 0 ; i< invitati.length; i++){
+        if(email.value == invitati[i]){
+            check = true;
+            
         }
     }
+    /*Sei dentro */
+    if(check){
+        host.classList.remove('d-verify');
+        youAreOut.classList.add('d-verify');
+        
+    }
+    /*Non sei dentro */
+    else{
+        host.classList.add('d-verify');
+        youAreOut.classList.remove('d-verify');
+        btnReset.classList.remove('d-verify');
+    }
 }
-bottone.addEventListener('click', verifyMail);
-*/
+btn.addEventListener('click', verify);
+
+/*reset button per riscrivere mail */
+function rewriteMail(){
+    window.location.reload();
+}
+btnReset.addEventListener('click' , rewriteMail);
+
+
 
 
 /*DADI*/
@@ -50,6 +67,7 @@ bottone.addEventListener('click', verifyMail);
     Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
     Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
+
 
 var player1Dice = Math.floor(Math.random() * 6) + 1;
 var player2Dice = Math.floor(Math.random() * 6) + 1;
